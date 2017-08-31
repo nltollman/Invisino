@@ -8,6 +8,12 @@
 	href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
 body, h1, h2, h3, h4, h5 {
 	font-family: "Poppins", sans-serif
@@ -30,8 +36,8 @@ img {
 	<!-- Navbar (sit on top) -->
 	<div class="w3-top">
 		<div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-			<a href="#home" class="w3-bar-item w3-button" style="padding: 0px;"><img
-				class="w3-image" src="./images/logo.png" alt="Logo"> &nbsp; <b>Invisino</b></a>
+			<a href="#home" class="w3-bar-item w3-button" style="margin: 0; padding: 0 !important"><img
+				class="w3-image" src="./images/logo.png" alt="Logo" style="margin: 0; padding: 0 !important"> &nbsp; <b>Invisino</b></a>
 			<!-- Float links to the right. Hide them on small screens -->
 			<div class="w3-right w3-hide-small">
 				<a href="#app-description" class="w3-bar-item w3-button">Description</a>
@@ -45,73 +51,78 @@ img {
 	</div>
 
 	<!-- Header with Slideshow -->
-	<header class="w3-display-container w3-center" id="home">
-		<button
-			class="w3-button w3-block w3-green w3-hide-large w3-hide-medium"
-			onclick="document.getElementById('download').style.display='block'">
-			Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i
-				class="fa fa-windows"></i>
-		</button>
-		<div class="mySlides w3-animate-opacity">
-			<img class="w3-image" src="./images/banner1.jpg" alt="Banner 1"
-				style="min-width: 500px" width="1500" height="1000">
-			<div class="w3-display-left w3-padding w3-hide-small"
-				style="width: 35%">
-				<div
-					class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-					<h1 class="w3-xlarge">
-						<b>Explore Augmented Reality</b>
-					</h1>
-					<hr class="w3-opacity">
-					<p>See the hidden world around you!</p>
-					<p>
-						<button class="w3-button w3-block w3-green w3-round"
-							onclick="document.getElementById('download').style.display='block'">
-							Download &nbsp; <i class="fa fa-android"></i>
-						</button>
-					</p>
+	<header id="home">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img class="w3-image" src="./images/banner1.jpg" alt="Banner 1"
+						style="min-width: 500px" width="1500" height="1000">
+					<div class="w3-display-left w3-padding w3-hide-small"
+						style="width: 35%">
+						<div
+							class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+							<h1 class="w3-xlarge">
+								<b>Explore Augmented Reality</b>
+							</h1>
+							<hr class="w3-opacity">
+							<p>See the hidden world around you!</p>
+							<p>
+								<button class="w3-button w3-block w3-green w3-round"
+									onclick="document.getElementById('download').style.display='block'">
+									Download &nbsp; <i class="fa fa-android"></i>
+								</button>
+							</p>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="mySlides w3-animate-opacity">
-			<img class="w3-image" src="./images/banner2.jpg" alt="Banner 2"
-				style="min-width: 500px" width="1500" height="1000">
-			<div class="w3-display-left w3-padding w3-hide-small"
-				style="width: 35%">
-				<div
-					class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-					<h1 class="w3-xlarge w3-text-red">
-						<b>Fast & Easy</b>
-					</h1>
-					<hr class="w3-opacity">
-					<p>Create notes on the fly!</p>
-					<p>
-						<button class="w3-button w3-block w3-red w3-round"
-							onclick="document.getElementById('download').style.display='block'">
-							Download &nbsp; <i class="fa fa-android"></i>
-						</button>
-					</p>
+				<div class="item">
+					<img class="w3-image" src="./images/banner2.jpg" alt="Banner 2"
+						style="min-width: 500px" width="1500" height="1000">
+					<div class="w3-display-left w3-padding w3-hide-small"
+						style="width: 35%">
+						<div
+							class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+							<h1 class="w3-xlarge w3-text-red">
+								<b>Fast & Easy</b>
+							</h1>
+							<hr class="w3-opacity">
+							<p>Create notes on the fly!</p>
+							<p>
+								<button class="w3-button w3-block w3-red w3-round"
+									onclick="document.getElementById('download').style.display='block'">
+									Download &nbsp; <i class="fa fa-android"></i>
+								</button>
+							</p>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="mySlides w3-animate-opacity">
-			<img class="w3-image" src="./images/banner3.jpg" alt="Banner 3"
-				style="min-width: 500px" width="1500" height="1000">
-			<div class="w3-display-left w3-padding w3-hide-small"
-				style="width: 35%">
-				<div
-					class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
-					<h1 class="w3-xlarge">
-						<b>Freedom for Creativity</b>
-					</h1>
-					<hr class="w3-opacity">
-					<p>Have fun - it is up to your imagination!</p>
-					<p>
-						<button class="w3-button w3-block w3-indigo w3-round"
-							onclick="document.getElementById('download').style.display='block'">
-							Download &nbsp; <i class="fa fa-android"></i>
-						</button>
-					</p>
+				<div class="item">
+					<img class="w3-image" src="./images/banner3.jpg" alt="Banner 3"
+						style="min-width: 500px" width="1500" height="1000">
+					<div class="w3-display-left w3-padding w3-hide-small"
+						style="width: 35%">
+						<div
+							class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+							<h1 class="w3-xlarge">
+								<b>Freedom for Creativity</b>
+							</h1>
+							<hr class="w3-opacity">
+							<p>Have fun - it is up to your imagination!</p>
+							<p>
+								<button class="w3-button w3-block w3-indigo w3-round"
+									onclick="document.getElementById('download').style.display='block'">
+									Download &nbsp; <i class="fa fa-android"></i>
+								</button>
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
