@@ -239,7 +239,7 @@ img {
 						<p>
 							<button class="w3-button w3-light-grey w3-block"
 								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> Contact
+								<i class="fa fa-envelope"></i> &nbsp; Contact
 							</button>
 						</p>
 					</div>
@@ -255,7 +255,7 @@ img {
 						<p>
 							<button class="w3-button w3-light-grey w3-block"
 								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> Contact
+								<i class="fa fa-envelope"></i> &nbsp; Contact
 							</button>
 						</p>
 					</div>
@@ -271,7 +271,7 @@ img {
 						<p>
 							<button class="w3-button w3-light-grey w3-block"
 								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> Contact
+								<i class="fa fa-envelope"></i> &nbsp; Contact
 							</button>
 						</p>
 					</div>
@@ -287,7 +287,7 @@ img {
 						<p>
 							<button class="w3-button w3-light-grey w3-block"
 								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> Contact
+								<i class="fa fa-envelope"></i> &nbsp; Contact
 							</button>
 						</p>
 					</div>
@@ -307,23 +307,23 @@ img {
 				<form action="/action_page.php" target="_blank">
 					<p>
 						<input class="w3-input w3-border" type="text" placeholder="Name"
-							required name="Name">
+							required name="Name" id="contact-name">
 					</p>
 					<p>
 						<input class="w3-input w3-border" type="text" placeholder="Email"
-							required name="Email">
+							required name="Email" id="contact-email">
 					</p>
 					<p>
 						<input class="w3-input w3-border" type="text"
-							placeholder="Subject" required name="Subject">
+							placeholder="Subject" required name="Subject" id="contact-subject">
 					</p>
 					<p>
 						<input class="w3-input w3-border" type="text"
-							placeholder="Message" required name="Message">
+							placeholder="Message" required name="Message" id="contact-message">
 					</p>
 					<p>
 						<button class="w3-button w3-black" type="submit"
-							style="border-radius: 5px;">
+							style="border-radius: 5px;" id="contact-submit">
 							<i class="fa fa-paper-plane"></i> &nbsp; Send
 						</button>
 					</p>
@@ -398,6 +398,19 @@ img {
 			x[myIndex - 1].style.display = "block";
 			setTimeout(carousel, 7000);
 		}
+		
+		$(document).ready(function() {
+		    $('#contact-submit').click(function() {
+		        $('#contact-form').attr('action',
+		                       'mailto:msgembala@crimson.ua.edu?subject=' +
+		                       $('#contact-subject').val() +
+		                       '&body=' + $('#contact-name').val() + "-" +
+		                       $('#contact-email').val() + "-" +
+		                       $('#contact-message').val()
+		        );
+		        $('#contact-form').submit();
+		    });
+		});
 	</script>
 
 </body>
