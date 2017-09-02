@@ -31,6 +31,9 @@ img {
 	display: none;
 }
 </style>
+<head>
+<link rel="icon" href="./images/logo.png">
+</head>
 <body class="w3-content w3-black" style="max-width: 1500px;">
 
 	<!-- Navbar (sit on top) -->
@@ -346,6 +349,17 @@ img {
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function() {
+			$('#contact-submit').click(function() {
+		        $('#contact-form').attr('action',
+		                       'mailto:msgembala@crimson.ua.edu?subject=' +
+		                       $('#contact-subject').val() +
+		                       '&body=' + $('#contact-name').val()
+		                       //$('#contact-email').val() + "-" +
+		                       //$('#contact-message').val()
+		        );
+		        $('#contact-form').submit();
+		    });
+			
 			$("a").on('click', function(event) {
 				if (this.hash !== "") {
 					event.preventDefault();
@@ -398,19 +412,6 @@ img {
 			x[myIndex - 1].style.display = "block";
 			setTimeout(carousel, 7000);
 		}
-		
-		$(document).ready(function() {
-		    $('#contact-submit').click(function() {
-		        $('#contact-form').attr('action',
-		                       'mailto:msgembala@crimson.ua.edu?subject=' +
-		                       $('#contact-subject').val() +
-		                       '&body=' + $('#contact-name').val()
-		                       //$('#contact-email').val() + "-" +
-		                       //$('#contact-message').val()
-		        );
-		        $('#contact-form').submit();
-		    });
-		});
 	</script>
 
 </body>
