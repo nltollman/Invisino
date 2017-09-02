@@ -36,10 +36,8 @@ img {
 	<!-- Navbar (sit on top) -->
 	<div class="w3-top">
 		<div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-			<a href="#home" class="w3-bar-item w3-button"
-				style="margin: 0; padding: 0 !important"><img class="w3-image"
-				src="./images/logo.png" alt="Logo"
-				style="margin: 0; padding: 0 !important"> &nbsp; <b>Invisino</b></a>
+			<a href="#home" class="w3-bar-item w3-button" style="margin: 0; padding: 0 !important"><img
+				class="w3-image" src="./images/logo.png" alt="Logo" style="margin: 0; padding: 0 !important"> &nbsp; <b>Invisino</b></a>
 			<!-- Float links to the right. Hide them on small screens -->
 			<div class="w3-right w3-hide-small">
 				<a href="#app-description" class="w3-bar-item w3-button">Description</a>
@@ -306,20 +304,30 @@ img {
 			message:</p>
 		<div class="w3-row-padding" style="margin-top: 64px">
 			<div>
-				<a href="mailto:msgembala@crimson.ua.edu"> <input
-					class="w3-input w3-border" type="text" placeholder="Name" required
-					name="Name" id="contact-name"> <br> <input
-					class="w3-input w3-border" type="text" placeholder="Email" required
-					name="Email" id="contact-email"> <br> <input
-					class="w3-input w3-border" type="text" placeholder="Subject"
-					required name="Subject" id="contact-subject"> <br> <input
-					class="w3-input w3-border" type="text" placeholder="Message"
-					required name="Message" id="contact-message"> <br>
-					<button class="w3-button w3-black" type="submit"
-						style="border-radius: 5px;" id="contact-submit">
-						<i class="fa fa-paper-plane"></i> &nbsp; Send
-					</button>
-				</a>
+				<form action="mailto:msgembala@crimson.ua.edu" method="post" enctype="text/plain" id="contact-form">
+					<p>
+						<input class="w3-input w3-border" type="text" placeholder="Name"
+							required name="Name" id="contact-name">
+					</p>
+					<p>
+						<input class="w3-input w3-border" type="text" placeholder="Email"
+							required name="Email" id="contact-email">
+					</p>
+					<p>
+						<input class="w3-input w3-border" type="text"
+							placeholder="Subject" required name="Subject" id="contact-subject">
+					</p>
+					<p>
+						<input class="w3-input w3-border" type="text"
+							placeholder="Message" required name="Message" id="contact-message">
+					</p>
+					<p>
+						<button class="w3-button w3-black" type="submit"
+							style="border-radius: 5px;" id="contact-submit">
+							<i class="fa fa-paper-plane"></i> &nbsp; Send
+						</button>
+					</p>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -390,19 +398,19 @@ img {
 			x[myIndex - 1].style.display = "block";
 			setTimeout(carousel, 7000);
 		}
-
-		/*$(document).ready(function() {
+		
+		$(document).ready(function() {
 		    $('#contact-submit').click(function() {
 		        $('#contact-form').attr('action',
 		                       'mailto:msgembala@crimson.ua.edu?subject=' +
 		                       $('#contact-subject').val() +
-		                       '&body=' + $('#contact-name').val() + "-" +
-		                       $('#contact-email').val() + "-" +
-		                       $('#contact-message').val()
+		                       '&body=' + $('#contact-name').val()
+		                       //$('#contact-email').val() + "-" +
+		                       //$('#contact-message').val()
 		        );
 		        $('#contact-form').submit();
 		    });
-		});*/
+		});
 	</script>
 
 </body>
