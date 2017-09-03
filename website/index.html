@@ -32,15 +32,17 @@ img {
 }
 </style>
 <head>
-<link rel="icon" href="./images/logo.png">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body class="w3-content w3-black" style="max-width: 1500px;">
 
 	<!-- Navbar (sit on top) -->
 	<div class="w3-top">
 		<div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
-			<a href="#home" class="w3-bar-item w3-button" style="margin: 0; padding: 0 !important"><img
-				class="w3-image" src="./images/logo.png" alt="Logo" style="margin: 0; padding: 0 !important"> &nbsp; <b>Invisino</b></a>
+			<a href="#home" class="w3-bar-item w3-button"
+				style="margin: 0; padding: 0 !important"><img class="w3-image"
+				src="./images/logo.png" alt="Logo"
+				style="margin: 0; padding: 0 !important"> &nbsp; <b>Invisino</b></a>
 			<!-- Float links to the right. Hide them on small screens -->
 			<div class="w3-right w3-hide-small">
 				<a href="#app-description" class="w3-bar-item w3-button">Description</a>
@@ -233,67 +235,31 @@ img {
 		<p class="w3-center w3-large">The ones who made this application!</p>
 		<div class="w3-row-padding w3-grayscale" style="margin-top: 64px">
 			<div class="w3-col l3 m6 w3-margin-bottom">
-				<div class="w3-card-2" style="border-radius: 20px;">
-					<img src="./images/maggie.jpg" alt="Maggie"
-						style="width: 100%; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-					<div class="w3-container">
-						<h3>Maggie Gembala</h3>
-						<p>msgembala@crimson.ua.edu</p>
-						<p>
-							<button class="w3-button w3-light-grey w3-block"
-								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> &nbsp; Contact
-							</button>
-						</p>
-					</div>
+				<img src="./images/maggie.jpg" alt="Maggie"
+					style="width: 100%; border-radius: 20px;">
+				<div class="w3-container">
+					<h3 align="center">Maggie Gembala</h3>
 				</div>
 			</div>
 			<div class="w3-col l3 m6 w3-margin-bottom">
-				<div class="w3-card-2" style="border-radius: 20px;">
-					<img src="./images/justin.jpg" alt="Justin"
-						style="width: 100%; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-					<div class="w3-container">
-						<h3>Justin Estep</h3>
-						<p>jcestep@crimson.ua.edu</p>
-						<p>
-							<button class="w3-button w3-light-grey w3-block"
-								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> &nbsp; Contact
-							</button>
-						</p>
-					</div>
+				<img src="./images/justin.jpg" alt="Justin"
+					style="width: 100%; border-radius: 20px;">
+				<div class="w3-container">
+					<h3 align="center">Justin Estep</h3>
 				</div>
 			</div>
 			<div class="w3-col l3 m6 w3-margin-bottom">
-				<div class="w3-card-2" style="border-radius: 20px;">
-					<img src="./images/jessie.jpg" alt="Jessie"
-						style="width: 100%; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-					<div class="w3-container">
-						<h3>Jessie Melton</h3>
-						<p>jrmelton@crimson.ua.edu</p>
-						<p>
-							<button class="w3-button w3-light-grey w3-block"
-								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> &nbsp; Contact
-							</button>
-						</p>
-					</div>
+				<img src="./images/jessie.jpg" alt="Jessie"
+					style="width: 100%; border-radius: 20px;">
+				<div class="w3-container">
+					<h3 align="center">Jessie Melton</h3>
 				</div>
 			</div>
 			<div class="w3-col l3 m6 w3-margin-bottom">
-				<div class="w3-card-2" style="border-radius: 20px;">
-					<img src="./images/nicole.jpg" alt="Nicole"
-						style="width: 100%; border-top-left-radius: 20px; border-top-right-radius: 20px;">
-					<div class="w3-container">
-						<h3>Nicole Tollman</h3>
-						<p>nltollman@crimson.ua.edu</p>
-						<p>
-							<button class="w3-button w3-light-grey w3-block"
-								style="border-radius: 5px;">
-								<i class="fa fa-envelope"></i> &nbsp; Contact
-							</button>
-						</p>
-					</div>
+				<img src="./images/nicole.jpg" alt="Nicole"
+					style="width: 100%; border-radius: 20px;">
+				<div class="w3-container">
+					<h3 align="center">Nicole Tollman</h3>
 				</div>
 			</div>
 		</div>
@@ -307,22 +273,24 @@ img {
 			message:</p>
 		<div class="w3-row-padding" style="margin-top: 64px">
 			<div>
-				<form id="contact-form">
+				<form action="send-form-email.php" method="post" id="contact-form">
 					<p>
 						<input class="w3-input w3-border" type="text" placeholder="Name"
 							required name="Name" id="contact-name">
 					</p>
 					<p>
-						<input class="w3-input w3-border" type="text" placeholder="Email"
+						<input class="w3-input w3-border" type="email" placeholder="Email"
 							required name="Email" id="contact-email">
 					</p>
 					<p>
 						<input class="w3-input w3-border" type="text"
-							placeholder="Subject" required name="Subject" id="contact-subject">
+							placeholder="Subject" required name="Subject"
+							id="contact-subject">
 					</p>
 					<p>
-						<input class="w3-input w3-border" type="text"
-							placeholder="Message" required name="Message" id="contact-message">
+						<textarea class="w3-input w3-border" rows="3"
+							placeholder="Message" required name="Message"
+							id="contact-message"></textarea>
 					</p>
 					<p>
 						<button class="w3-button w3-black" type="submit"
@@ -338,28 +306,48 @@ img {
 	<!-- Footer -->
 	<footer
 		class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
-		<div class="w3-section">
-			<i class="fa fa-facebook-official w3-hover-opacity"></i> <i
-				class="fa fa-linkedin w3-hover-opacity"></i>
-		</div>
-		<p class="w3-medium">The University of Alabama</p>
+		<p class="w3-medium">Computer Science Senior Design Project</p>
+		<p class="w3-small">"The views, opinions, and conclusions
+			expressed in this page are those of the author or organization and
+			not necessarily those of The University of Alabama or its officers
+			and trustees. The content of this page has not been reviewed or
+			approved by the University of Alabama, and the author or organization
+			is solely responsible for its content."</p>
 	</footer>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			$('#contact-submit').click(function() {
-		        $('#contact-form').attr('action',
-		                       'mailto:msgembala@crimson.ua.edu?subject=' +
-		                       $('#contact-subject').val() +
-		                       '&body=' + $('#contact-name').val()
-		                       //$('#contact-email').val() + "-" +
-		                       //$('#contact-message').val()
-		        );
-		        $('#contact-form').submit();
-		    });
-			
+			/*$('#contact-submit').click(
+					function() {
+						$('#contact-form').attr(
+								'action',
+								'mailto:msgembala@crimson.ua.edu?subject='
+										+ $('#contact-subject').val()
+										+ '&body='
+										+ $('#contact-name').val()
+						//$('#contact-email').val() + "-" +
+						//$('#contact-message').val()
+						);
+						$('#contact-form').submit();
+					});*/
+			$(function() {
+				$('form').submit(function() {
+					$.ajax({
+						type : 'POST',
+						url : 'send-form-email.php',
+						data : {
+							name : $(this).contact-name.value,
+							email : $(this).contact-email.value
+							subject : $(this).contact-subject.value
+							message : $(this).contact-message.value
+						}
+					});
+					return false;
+				});
+			})
+
 			$("a").on('click', function(event) {
 				if (this.hash !== "") {
 					event.preventDefault();
@@ -372,46 +360,6 @@ img {
 				}
 			});
 		});
-	</script>
-
-	<script>
-		var slideIndex = 1;
-		var myIndex = 0;
-		carousel();
-		showDivs(slideIndex);
-
-		function plusDivs(n) {
-			showDivs(slideIndex += n);
-		}
-
-		function showDivs(n) {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			if (n > x.length) {
-				slideIndex = 1
-			}
-			if (n < 1) {
-				slideIndex = x.length
-			}
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			x[slideIndex - 1].style.display = "block";
-		}
-
-		function carousel() {
-			var i;
-			var x = document.getElementsByClassName("mySlides");
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";
-			}
-			myIndex++;
-			if (myIndex > x.length) {
-				myIndex = 1
-			}
-			x[myIndex - 1].style.display = "block";
-			setTimeout(carousel, 7000);
-		}
 	</script>
 
 </body>
