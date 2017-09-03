@@ -49,7 +49,7 @@ img {
 		<div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
 			<a href="#home" class="w3-bar-item w3-button"
 				style="margin: 0; padding: 0 !important"><img class="w3-image"
-				src="./images/logo.png" alt="Logo"
+				src="./images/logo-small.png" alt="Logo"
 				style="margin: 0; padding: 0 !important"> &nbsp; <b>Invisino</b></a>
 			<!-- Float links to the right. Hide them on small screens -->
 			<div class="w3-right w3-hide-small">
@@ -340,21 +340,6 @@ img {
 						);
 						$('#contact-form').submit();
 					});*/
-			$(function() {
-				$('form').submit(function() {
-					$.ajax({
-						type : 'POST',
-						url : 'send-form-email.php',
-						data : {
-							name : $(this).contact-name.value,
-							email : $(this).contact-email.value
-							subject : $(this).contact-subject.value
-							message : $(this).contact-message.value
-						}
-					});
-					return false;
-				});
-			})
 
 			$("a").on('click', function(event) {
 				if (this.hash !== "") {
