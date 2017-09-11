@@ -30,6 +30,14 @@ img {
 .mySlides {
 	display: none;
 }
+/* visited contact link */
+#contact-us-button:visited {
+	color: #A4C639;
+}
+/* mouse over contact link */
+#contact-us-button:hover, #contact-us-button:active {
+	color: #759900;
+}
 </style>
 <head>
 <link rel="apple-touch-icon" sizes="180x180"
@@ -279,36 +287,39 @@ img {
 		<h1 class="w3-center">CONTACT</h1>
 		<p class="w3-center w3-large">Let's get in touch! Send us a
 			message:</p>
+		<a id="contact-us-button" href="mailto:msgembala@crimson.ua.edu">
+			<i class="fa fa-envelope w3-jumbo">
+		</a>
+		<!-- 
 		<div class="w3-row-padding" style="margin-top: 64px">
 			<div>
-				<form action="send-form-email.php" method="post" id="contact-form">
-					<p>
-						<input class="w3-input w3-border" type="text" placeholder="Name"
-							required name="Name" id="contact-name">
-					</p>
-					<p>
-						<input class="w3-input w3-border" type="email" placeholder="Email"
-							required name="Email" id="contact-email">
-					</p>
-					<p>
-						<input class="w3-input w3-border" type="text"
-							placeholder="Subject" required name="Subject"
-							id="contact-subject">
-					</p>
-					<p>
-						<textarea class="w3-input w3-border" rows="3"
-							placeholder="Message" required name="Message"
-							id="contact-message"></textarea>
-					</p>
-					<p>
-						<button class="w3-button w3-black" type="submit"
-							style="border-radius: 5px;" id="contact-submit">
-							<i class="fa fa-paper-plane"></i> &nbsp; Send
-						</button>
-					</p>
-				</form>
+				<input class="w3-input w3-border" type="text" placeholder="Name"
+					required name="Name" id="contact-name">
+				<p>
+					<input class="w3-input w3-border" type="text" placeholder="Name"
+						required name="Name" id="contact-name">
+				</p>
+				<p>
+					<input class="w3-input w3-border" type="email" placeholder="Email"
+						required name="Email" id="contact-email">
+				</p>
+				<p>
+					<input class="w3-input w3-border" type="text" placeholder="Subject"
+						required name="Subject" id="contact-subject">
+				</p>
+				<p>
+					<textarea class="w3-input w3-border" rows="3" placeholder="Message"
+						required name="Message" id="contact-message"></textarea>
+				</p>
+				<p>
+					<button class="w3-button w3-black" type="submit"
+						style="border-radius: 5px;" id="contact-submit">
+						<i class="fa fa-paper-plane"></i> &nbsp; Send
+					</button>
+				</p>
 			</div>
 		</div>
+		-->
 	</div>
 
 	<!-- Footer -->
@@ -342,7 +353,9 @@ img {
 					});*/
 
 			$("a").on('click', function(event) {
-				if (this.hash !== "") {
+				if (this.id == "contact-us-button") {
+					//Do nothing, and let the standard operations take over for mailing purposes
+				} else if (this.hash !== "") {
 					event.preventDefault();
 					var hash = this.hash;
 					$('html, body').animate({
