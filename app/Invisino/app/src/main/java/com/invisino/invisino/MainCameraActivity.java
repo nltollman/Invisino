@@ -1,12 +1,18 @@
 package com.invisino.invisino;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+
+/*
+Created by Maggie Gembala: 10-3-2017
+ */
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -93,7 +99,6 @@ public class MainCameraActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
-
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,7 +110,24 @@ public class MainCameraActivity extends AppCompatActivity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        //findViewById(R.id.button_name).setOnTouchListener(mDelayHideTouchListener);
+        Button newNoteButton = (Button) findViewById(R.id.plus_button);
+        newNoteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent nextScreen = new Intent(view.getContext(), NewNoteActivity.class);
+                startActivityForResult(nextScreen, 0);
+            }
+        });
+
+        Button settingsButton = (Button) findViewById(R.id.settings_button);
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent nextScreen = new Intent(view.getContext(), SettingsActivity.class);
+                startActivityForResult(nextScreen, 0);
+            }
+        });
     }
 
     @Override
