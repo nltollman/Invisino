@@ -10,8 +10,8 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
-        android:logo="@drawable/icon"
         android:label="@string/app_name"
+        android:logo="@drawable/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -23,6 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".MainCameraActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_main_camera"
+            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>
