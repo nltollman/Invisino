@@ -28,7 +28,11 @@
             android:name=".MainCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_main_camera"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".NewNoteActivity" />
+        <activity android:name=".ViewNoteActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".ChangeAccountInfoActivity"></activity>
     </application>
 
 </manifest>

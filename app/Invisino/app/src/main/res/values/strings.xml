@@ -10,6 +10,8 @@
     <string name="action_register">Register</string>
     <string name="action_register_and_sign_in">Register &amp; Sign In</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save</string>
+    <string name="character_limit">400 Characters Max</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -17,8 +19,16 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-
     <string name="title_activity_main_camera">MainCameraActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="post_new_note">Post Note</string>
+    <string name="edit_note">Edit</string>
+    <string name="delete_note">Delete</string>
+    <string name="change_account_info">Change Account Info</string>
+    <string name="view_my_notes">View My Notes</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="characters_remaining">Characters Remaining: </string>
+    <string name="action_new_note">New Note</string>
+    <string name="action_settings">Settings</string>
 </resources>
