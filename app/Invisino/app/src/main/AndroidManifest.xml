@@ -3,9 +3,13 @@
     package="com.invisino.invisino">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-feature android:name="android.hardware.CAMERA" android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Needed only if your app targets Android 5.0 (API level 21) or higher. -->
+    <uses-feature android:name="android.hardware.location.gps" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera2.full" />
 
     <application
         android:allowBackup="true"
@@ -33,7 +37,7 @@
         <activity android:name=".ViewNoteActivity" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".ChangeAccountInfoActivity" />
-        <activity android:name=".ViewMyExisitingNotes"></activity>
+        <activity android:name=".ViewMyExisitingNotesActivity" />
     </application>
 
 </manifest>
