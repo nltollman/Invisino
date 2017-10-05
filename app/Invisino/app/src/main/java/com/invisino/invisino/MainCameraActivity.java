@@ -9,9 +9,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+
+import java.io.IOException;
 
 /*
 Created by Maggie Gembala: 10-3-2017
@@ -21,6 +24,7 @@ Created by Maggie Gembala: 10-3-2017
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
+
 public class MainCameraActivity extends AppCompatActivity {
 
     private Camera mCamera = null;
@@ -100,7 +104,8 @@ public class MainCameraActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main_camera);
+        mTextureView = new TextureView(this);
+        mTextureView.setSurfaceTextureListener(this);
 
         try{
             mCamera = Camera.open();//you can use open(int) to use different cameras
@@ -147,6 +152,31 @@ public class MainCameraActivity extends AppCompatActivity {
                 startActivityForResult(nextScreen, 0);
             }
         });
+    }
+
+    public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
+        mCamera = Camera.open();
+
+        try {
+            mCamera.setPreviewTexture(surface);
+            mCamera.startPreview();
+        } catch (IOException ioe) {
+            // Something bad happened
+        }
+    }
+
+    public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
+        // Ignored, Camera does all the work for us
+    }
+
+    public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
+        mCamera.stopPreview();
+        mCamera.release();
+        return true;
+    }
+
+    public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+        // Invoked every time there's a new Camera preview frame
     }
 
     @Override

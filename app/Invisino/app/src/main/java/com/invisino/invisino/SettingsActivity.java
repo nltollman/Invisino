@@ -29,7 +29,7 @@ public class SettingsActivity extends AppCompatActivity {
         viewMyNotesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent nextScreen = new Intent(view.getContext(), ViewNoteActivity.class);
+                Intent nextScreen = new Intent(view.getContext(), ViewMyExisitingNotesActivity.class);
                 startActivityForResult(nextScreen, 0);
             }
         });
