@@ -32,7 +32,8 @@
         <activity android:name=".NewNoteActivity" />
         <activity android:name=".ViewNoteActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".ChangeAccountInfoActivity"></activity>
+        <activity android:name=".ChangeAccountInfoActivity" />
+        <activity android:name=".ViewMyExisitingNotes"></activity>
     </application>
 
 </manifest>
