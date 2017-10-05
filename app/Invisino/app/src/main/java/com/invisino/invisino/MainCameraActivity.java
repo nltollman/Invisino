@@ -3,16 +3,16 @@ package com.invisino.invisino;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.hardware.Camera;
-import android.hardware.camera2.*;
-import android.graphics.SurfaceTexture;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 import java.io.IOException;
 
@@ -24,10 +24,11 @@ Created by Maggie Gembala: 10-3-2017
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class MainCameraActivity extends AppCompatActivity implements TextureView.SurfaceTextureListener{
 
-    private Camera mCamera;
-    private TextureView mTextureView;
+public class MainCameraActivity extends AppCompatActivity {
+
+    private Camera mCamera = null;
+    private CameraView mCameraView = null;
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -106,9 +107,18 @@ public class MainCameraActivity extends AppCompatActivity implements TextureView
         mTextureView = new TextureView(this);
         mTextureView.setSurfaceTextureListener(this);
 
-        setContentView(mTextureView);
+        try{
+            mCamera = Camera.open();//you can use open(int) to use different cameras
+        } catch (Exception e){
+            Log.d("ERROR", "Failed to get camera: " + e.getMessage());
+        }
 
-        setContentView(R.layout.activity_main_camera);
+        if(mCamera != null) {
+            mCameraView = new CameraView(this, mCamera);//create a SurfaceView to show camera data
+            FrameLayout camera_view = (FrameLayout)findViewById(R.id.fullscreen_content_frame);
+            camera_view.addView(mCameraView);//add the SurfaceView to the layout
+        }
+
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
